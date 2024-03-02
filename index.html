@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Codebyadnan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.28.0/dist/apexcharts.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+        <div class="menu-box">
+          <div class="menu-item">
+            <div class="menu-item-start">
+              <div class="logo">
+                <img
+                  src="assets/img/logo1.png"
+                  alt=""
+                  height="70px"
+                  width="140px"
+                />
+              </div>
+              <hr class="logo-underline" />
+              <div class="dashboard-menu">
+                <li class="dashboard-menu-item">
+                  <i class="fa-solid fa-house"></i>
+                  <a href="#">Dashboard</a>
+                </li>
+                <li class="dashboard-menu-item">
+                  <span class="navbar-heading">Layouts & Pages</span>
+                 </li>
+                 <li class="dashboard-menu-item">
+                   <i class="fa-solid fa-layer-group"></i>
+                   <a href="#">Pages</a>
+                       <i class="fa-solid fa-angle-down down-arrow" onclick="toggleDropdown()"></i>
+                       <li class="dashboard-dropdown-menu" id="dropdownMenu">
+                         <a href="#">Profile</a>
+                         <a href="#">Setting</a>
+                         <a href="#">Billing</a>
+                         <a href="#">Pricing</a>
+                         <a href="#">404 Page</a>
+                       </li>
+                 </li>
+                <li class="dashboard-menu-item">
+                  <i class="fa-solid fa-object-ungroup"></i>
+                  <span class="dashboard-menu-item-text">Layout</span>
+                </li>
+                <li class="dashboard-menu-item">
+                  <i class="fas fa-comment"></i>
+                  <a href="#">Chat</a>
+                </li>
+                <li class="dashboard-menu-item">
+                  <span class="navbar-heading">Documentation</span>
+                 </li>
+                 <li class="dashboard-menu-item">
+                  <i class="fa-solid fa-book"></i>
+                  <a href="#">Docs</a>
+                </li>
+                <li class="dashboard-menu-item">
+                  <i class="fa-solid fa-cloud-arrow-down"></i>
+                  <a href="#">Download</a>
+                </li>
+                <li class="dashboard-menu-item">
+                  <i class="fas fa-cog"></i>
+                  <a href="#">Setting</a>
+                </li>
+              </div>
+            </div>
+            <div class="menu-item-end">
+              <hr class="logout-underline" />
+              <li class="dashboard-menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <a href="#">Logout</a>
+              </li>
+            </div>
+          </div>
+        </div>
+        <div class="main-box">
+          <div class="dashboard-top-bar">
+            <div class="search-bar">
+              <div class="input-group">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="Search"
+                />
+              </div>
+            </div>
+            <div class="profile-bar">
+              <a href="#"><i class="fa-regular fa-comment-dots"></i></a>
+              <a href="#"><i class="fa-regular fa-bell"></i></a>
+              <div class="profile">
+                <img
+                  src="assets/img/smiling_man.jpg"
+                  alt=""
+                  class="profile-img"
+                />
+                <span class="profile-name">John Doe</span>
+                <i class="fa-solid fa-caret-down profile-dropdown"></i>
+              </div>
+              <div class="profile-menu">
+                <li class="profile-menu-link">
+                  <i class="fa-solid fa-user-tie"></i>
+                  <a href="#">Edit Profile</a>
+                </li>
+                <li class="profile-menu-link">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <a href="#">Activity Log</a>
+                </li>
+                <li class="profile-menu-link">
+                  <i class="fa-solid fa-gear"></i>
+                  <a href="#">Account Setting</a>
+                </li>
+                <li class="profile-menu-link">
+                  <i class="fa-solid fa-share"></i>
+                  <a href="#">Share</a>
+                </li>
+                <li class="profile-menu-link">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <a href="#">Logout</a>
+                </li>
+              </div>
+              <div class="hamburger">
+                <i class="fa-solid fa-bars-staggered"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-container">
+            <div class="project-section">
+              <div class="project-section-title">
+                <h1 class="project-title">Projects</h1>
+                <a href="#" class="create-project-btn">Create New Project</a>
+              </div>
+              <div class="project-item">
+                <div class="row">
+                  <div class="col-sm-6 col-md-3">
+                    <div class="project-item-box">
+                      <div class="project-item-heading">
+                        <h1>Projects</h1>
+                        <i class="fa-solid fa-briefcase"></i>
+                      </div>
+                      <div class="project-item-detail">
+                        <h1>18</h1>
+                        <span>2 Completed</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="project-item-box">
+                      <div class="project-item-heading">
+                        <h1>Active Task</h1>
+                        <i class="fa-solid fa-list-check"></i>
+                      </div>
+                      <div class="project-item-detail">
+                        <h1>132</h1>
+                        <span>30 Completed</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="project-item-box">
+                      <div class="project-item-heading">
+                        <h1>Teams</h1>
+                        <i class="fa-solid fa-people-group"></i>
+                      </div>
+                      <div class="project-item-detail">
+                        <h1>15</h1>
+                        <span>2 Completed</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6 col-md-3">
+                    <div class="project-item-box">
+                      <div class="project-item-heading">
+                        <h1>Productivity</h1>
+                        <i class="fa-solid fa-bullseye"></i>
+                      </div>
+                      <div class="project-item-detail">
+                        <h1>86%</h1>
+                        <span>10% Completed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End Project Container-->
+          
+          <div class="active-project-container">
+            <div class="row">
+              <div class="col-md-12">
+                 <div class="active-project-box">
+                     <div class="active-project-heading">
+                       <h1>Active Projects</h1>
+                     </div>
+                     <div class="active-project-titles">
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr class="table-heading">
+                              <th>Project Name</th>
+                              <th>Hours</th>
+                              <th>Priority</th>
+                              <th class="members-item-heading">Members</th>
+                              <th>Progress</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/2202px-Dropbox_Icon.svg.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">Dropbox Design System</a>
+                                </div>
+                              </td>
+                              <td>34</td>
+                              <td>
+                                <button class="priority-btn-medium">Medium</button>
+                              </td>
+                              <td>
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>15%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">Slack Team UI/UX Design</a>
+                                </div>
+                              </td>
+                              <td>39</td>
+                              <td>
+                                <button class="priority-btn-high">High</button>
+                              </td>
+                              <td>
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>35%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">GitHub Satellite</a>
+                                </div>
+                              </td>
+                              <td>50</td>
+                              <td>
+                                <button class="priority-btn-low">Low</button>
+                              </td>
+                              <td>
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>75%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">Linkedin UI Design System</a>
+                                </div>
+                              </td>
+                              <td>102</td>
+                              <td>
+                                <button class="priority-btn-medium">Medium</button>
+                              </td>
+                              <td class="members-item">
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>95%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">WhatsApp UX Design</a>
+                                </div>
+                              </td>
+                              <td>300</td>
+                              <td>
+                                <button class="priority-btn-track">Track</button>
+                              </td>
+                              <td>
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>100%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="project-name">
+                                  <img src="https://i.pinimg.com/originals/ce/d6/6e/ced66ecfc53814d71f8774789b55cc76.png"
+                                   height="40px" width="40px" alt="">
+                                   <a href="#">Facebook Security System </a>
+                                </div>
+                              </td>
+                              <td>150</td>
+                              <td>
+                                <button class="priority-btn-low">Low</button>
+                              </td>
+                              <td>
+                                <div class="team-images">
+                                  <div class="image-container">
+                                      <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png" height="35px" width="35px" alt="" class="image image1">
+                                      <img src="https://unitedthemes.com/wp-content/uploads/2018/09/team1.jpg" height="35px" width="35px" alt="" class="image image2">
+                                      <img src="https://jangada-dideias.pt/wp-content/uploads/2019/08/team-member-01.jpg" height="35px" width="35px" alt="" class="image image3">
+                                      <span class="more-team-btn">+5</span>
+                                  </div>
+                              </div>
+                              </td>
+                              <td>
+                                <div class="progress-item">
+                                  <span>65%</span>
+                                  <hr id="progress-bar">
+                              </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                       <div class="all-project">
+                         <a href="#">View All Projects</a>
+                       </div>
+                      </div>
+                     </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="performance-and-team-container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="chart">
+                   <span class="chart-title">Tasks Performance</span>
+                  <canvas id="myChart"></canvas>
+                <div class="chart-item">
+                   <div class="chart-detail">
+                     <span class="percentage">76%</span>
+                     <span class="status">Completed</span>
+                   </div>
+                   <div class="chart-detail">
+                    <span class="percentage">16%</span>
+                    <span class="status">In Progress</span>
+                  </div>
+                  <div class="chart-detail">
+                    <span class="percentage">8%</span>
+                    <span class="status">Behind</span>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+              <div class="team-box">
+                <div class="team-heading">
+                  <h1>Teams</h1>
+                </div>
+                <div class="team-titles">
+                 <div class="table-responsive">
+                   <table class="table table-bordered">
+                     <thead>
+                       <tr class="table-heading">
+                         <th>Name</th>
+                         <th>Roll</th>
+                         <th>Last Activity</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>
+                           <div class="team-info">
+                             <div class="team-image">
+                              <img src="https://cbeyondsal.com/wp-content/uploads/2017/02/team_member_02-540x540.jpg"
+                               alt="">
+                             </div>
+                             <div class="team-detail">
+                                <span class="team-member-name">
+                                  Anita Parmer
+                                </span>
+                                <span class="team-member-email">
+                                  anita@example.com
+                                </span>
+                             </div>
+                           </div>
+                         </td>
+                         <td>
+                          <span class="team-member-roll">
+                            Front End Developer
+                          </span>
+                         </td>
+                         <td>
+                          <span class="team-member-activity">
+                            3, Dec 2023
+                          </span>
+                         </td>
+            
+                       </tr>
+                       <tr>
+                        <td>
+                          <div class="team-info">
+                            <div class="team-image">
+                             <img src="https://www.sexymedia.co.uk/wp-content/uploads/2019/08/team-member-02.jpg"
+                              alt="">
+                            </div>
+                            <div class="team-detail">
+                               <span class="team-member-name">
+                                Amanda Darnell
+                               </span>
+                               <span class="team-member-email">
+                                Amanda@example.com
+                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                         <span class="team-member-roll">
+                          Project Director
+                         </span>
+                        </td>
+                        <td>
+                         <span class="team-member-activity">
+                          Today
+                         </span>
+                        </td>
+           
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="team-info">
+                            <div class="team-image">
+                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD2oRHa4goM1YXYfOnOz5iOl5vnuAJmG-TOtaHLL4i8Vru_zETsZ2XG9htyTJrI98SNdg&usqp=CAU"
+                              alt="">
+                            </div>
+                            <div class="team-detail">
+                               <span class="team-member-name">
+                                Darshini Nair
+                               </span>
+                               <span class="team-member-email">
+                                Darshininair@example.com
+                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                         <span class="team-member-roll">
+                          Full- Stack Developer
+                         </span>
+                        </td>
+                        <td>
+                         <span class="team-member-activity">
+                          Yesterday
+                         </span>
+                        </td>
+           
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="team-info">
+                            <div class="team-image">
+                             <img src="https://www.ultimatebeaver.com/wp-content/uploads/2021/04/photo-gallery-img-02.jpg"
+                              alt="">
+                            </div>
+                            <div class="team-detail">
+                               <span class="team-member-name">
+                                 John Doe
+                               </span>
+                               <span class="team-member-email">
+                                 john@example.com
+                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                         <span class="team-member-roll">
+                          Account Manager
+                         </span>
+                        </td>
+                        <td>
+                         <span class="team-member-activity">
+                           3, Feb 2024
+                         </span>
+                        </td>
+           
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="team-info">
+                            <div class="team-image">
+                             <img src="https://www.vitrine.ro/wp-content/uploads/2017/01/team-member-2-550x550.jpg"
+                              alt="">
+                            </div>
+                            <div class="team-detail">
+                               <span class="team-member-name">
+                                 Kuldeep
+                               </span>
+                               <span class="team-member-email">
+                                 kuldeep@example.com
+                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                         <span class="team-member-roll">
+                          Digital Marketer
+                         </span>
+                        </td>
+                        <td>
+                         <span class="team-member-activity">
+                           15, Feb 2024
+                         </span>
+                        </td>
+           
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="team-info">
+                            <div class="team-image">
+                             <img src="https://powerpackelements.com/wp-content/uploads/2017/11/Team-memeber-01.png"
+                              alt="">
+                            </div>
+                            <div class="team-detail">
+                               <span class="team-member-name">
+                                Jitu Chauhan
+                               </span>
+                               <span class="team-member-email">
+                                Jituchauhan@example.com
+                               </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                         <span class="team-member-roll">
+                           Front End Developer
+                         </span>
+                        </td>
+                        <td>
+                         <span class="team-member-activity">
+                           29, Feb 2024
+                         </span>
+                        </td>
+           
+                      </tr>
+                     </tbody>
+                   </table>
+                 </div>
+                </div>
+            </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="credit">
+            <div class="row">
+             <div class="col-md-12">
+               <hr class="footer-line">
+                <span class="footer-credit">Made By: <a href="https://www.codebyadnan.com">Adnan Khan</a></span>
+             </div>
+            </div>
+          </div>
+        
+
+      </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9498bdc1c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
